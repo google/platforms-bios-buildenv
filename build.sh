@@ -32,7 +32,7 @@ git clone --branch 0.10 --depth 1 https://github.com/debuerreotype/debuerreotype
 
 BIN=debuerreotype/scripts
 
-$BIN/debuerreotype-init rootfs $DISTRO 2019-08-01T00:00:00Z
+$BIN/debuerreotype-init rootfs $DISTRO $TIMESTAMP
 $BIN/debuerreotype-minimizing-config rootfs
 $BIN/debuerreotype-apt-get rootfs update -qq
 $BIN/debuerreotype-apt-get rootfs dist-upgrade -yqq
