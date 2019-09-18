@@ -37,6 +37,14 @@ $BIN/debuerreotype-minimizing-config rootfs
 $BIN/debuerreotype-apt-get rootfs update -qq
 $BIN/debuerreotype-apt-get rootfs dist-upgrade -yqq
 
+# To work around Java SSL certificates not being deterministic do not install
+# any SSL certs.
+$BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends debconf-utils
+$BIN/debuerreotype-chroot rootfs debconf-set-selections <<EOF
+ca-certificates ca-certificates/enable_crts multiselect ""
+ca-certificates ca-certificates/trust_new_crts select no
+EOF
+
 # Update this list to add software to the build environment.
 
 $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
@@ -44,16 +52,20 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   bc \
   bison \
   build-essential \
+  default-jre \
   flex \
+  gawk \
   git \
+  libc6-i386 \
   nasm \
   python-distutils-extra \
   uuid-dev \
 
 $BIN/debuerreotype-debian-sources-list rootfs $DISTRO
 
-# Delete cached Python bytecode.
+# Delete cached Python and Java bytecode.
 find -type d -name  __pycache__ -prune  -exec rm -r "{}" \;
+find -type f -name '*.jsa' -prune  -exec rm -r "{}" \;
 
 $BIN/debuerreotype-tar rootfs rootfs.tar
 sha256sum rootfs.tar > rootfs.sha256
