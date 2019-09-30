@@ -61,6 +61,17 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   python-distutils-extra \
   uuid-dev \
 
+# Install wine
+$BIN/debuerreotype-chroot rootfs dpkg --add-architecture i386
+$BIN/debuerreotype-apt-get rootfs update -qq
+$BIN/debuerreotype-apt-get rootfs dist-upgrade -yqq
+$BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
+  wine \
+  wine32 \
+  wine64 \
+  libwine \
+  fonts-wine
+
 $BIN/debuerreotype-debian-sources-list rootfs $DISTRO
 
 # Delete cached Python and Java bytecode.
