@@ -52,6 +52,7 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   bc \
   bison \
   build-essential \
+  cpio \
   default-jre \
   flex \
   gawk \
