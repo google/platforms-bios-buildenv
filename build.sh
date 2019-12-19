@@ -60,6 +60,7 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   libc6-i386 \
   nasm \
   python-distutils-extra \
+  squashfs-tools \
   uuid-dev \
 
 # Install wine
