@@ -59,6 +59,7 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   git \
   libc6-i386 \
   nasm \
+  protobuf-compiler \
   python-distutils-extra \
   squashfs-tools \
   uuid-dev \
