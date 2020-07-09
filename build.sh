@@ -58,9 +58,11 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   gawk \
   git \
   libc6-i386 \
+  libtool-bin \
   nasm \
   protobuf-compiler \
   python-distutils-extra \
+  python-protobuf \
   squashfs-tools \
   uuid-dev \
 
@@ -79,6 +81,7 @@ $BIN/debuerreotype-debian-sources-list rootfs $DISTRO
 
 # Delete cached Python and Java bytecode.
 find -type d -name  __pycache__ -prune  -exec rm -r "{}" \;
+find -type f -name '*.pyc' -prune  -exec rm -r "{}" \;
 find -type f -name '*.jsa' -prune  -exec rm -r "{}" \;
 
 $BIN/debuerreotype-tar rootfs rootfs.tar
