@@ -6,7 +6,7 @@ ADD rootfs.tar.xz /
 # The format is the timestamp of the base image in YYYYMMDD format a literal '.'
 # followed by a increasing counter. This counter does not reset when the base
 # image is bumped. Update this counter on every change.
-ENV BUILDENV 20190801.9
+ENV BUILDENV 20190801.10
 
 # Add Go support.
 ADD go1.14.4.linux-amd64.tar.gz /usr/local
