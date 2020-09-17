@@ -62,6 +62,14 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   nasm \
   protobuf-compiler \
   python3 \
+  python3-cffi \
+  python3-colorama \
+  python3-crcmod \
+  python3-cryptography \
+  python3-lxml \
+  python3-pycparser \
+  python3-six \
+  python3-yapsy \
   python-distutils-extra \
   python-protobuf \
   squashfs-tools \
