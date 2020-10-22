@@ -50,12 +50,14 @@ EOF
 $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   acpica-tools \
   bc \
+  binutils-multiarch \
   bison \
   build-essential \
   cpio \
   default-jre \
   flex \
   gawk \
+  gcc-aarch64-linux-gnu \
   git \
   libc6-i386 \
   libtool-bin \
@@ -73,7 +75,7 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   python-distutils-extra \
   python-protobuf \
   squashfs-tools \
-  uuid-dev \
+  uuid-dev
 
 # Install wine
 $BIN/debuerreotype-chroot rootfs dpkg --add-architecture i386
