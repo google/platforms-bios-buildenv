@@ -59,6 +59,7 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   gawk \
   gcc-aarch64-linux-gnu \
   git \
+  libc6-dev-arm64-cross \
   libc6-i386 \
   libtool-bin \
   nasm \
