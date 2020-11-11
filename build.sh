@@ -57,6 +57,7 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   build-essential \
   cpio \
   default-jre \
+  device-tree-compiler \
   flex \
   gawk \
   gcc-aarch64-linux-gnu \
