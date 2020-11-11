@@ -39,10 +39,12 @@ $BIN/debuerreotype-apt-get rootfs dist-upgrade -yqq
 
 # To work around Java SSL certificates not being deterministic do not install
 # any SSL certs.
+# Furthermore make sure that /bin/sh points to bash instead of dash.
 $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends debconf-utils
 $BIN/debuerreotype-chroot rootfs debconf-set-selections <<EOF
 ca-certificates ca-certificates/enable_crts multiselect ""
 ca-certificates ca-certificates/trust_new_crts select no
+dash dash/sh boolean false
 EOF
 
 # Update this list to add software to the build environment.
