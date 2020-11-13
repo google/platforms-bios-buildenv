@@ -64,6 +64,7 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   git \
   libc6-dev-arm64-cross \
   libc6-i386 \
+  libssl-dev \
   libtool-bin \
   nasm \
   protobuf-compiler \
