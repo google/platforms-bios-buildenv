@@ -51,6 +51,8 @@ EOF
 
 $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   acpica-tools \
+  autoconf \
+  automake \
   bc \
   binutils-multiarch \
   bison \
@@ -58,13 +60,20 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   cpio \
   default-jre \
   device-tree-compiler \
+  dkms \
   flex \
   gawk \
   gcc-aarch64-linux-gnu \
   git \
+  libbsd-dev \
   libc6-dev-arm64-cross \
   libc6-i386 \
+  libfdt-dev \
+  libglib2.0-dev \
+  libjson-c-dev \
+  libpcre3-dev \
   libssl-dev \
+  libtool \
   libtool-bin \
   nasm \
   protobuf-compiler \
