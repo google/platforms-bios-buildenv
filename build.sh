@@ -22,8 +22,8 @@ TIMESTAMP=2019-08-01T00:00:00Z
 # Clean up previous artifacts.
 rm -rf rootfs
 rm -rf rootfs.sha256
-rm -rf rootfs.tar
-rm -rf rootfs.tar.xz
+rm -rf third_party/rootfs.tar
+rm -rf third_party/rootfs.tar.xz
 rm -rf debuerreotype
 
 # Get a well know version of debuerreotype.
@@ -109,12 +109,12 @@ find -type d -name  __pycache__ -prune  -exec rm -r "{}" \;
 find -type f -name '*.pyc' -prune  -exec rm -r "{}" \;
 find -type f -name '*.jsa' -prune  -exec rm -r "{}" \;
 
-$BIN/debuerreotype-tar rootfs rootfs.tar
-sha256sum rootfs.tar > rootfs.sha256
-xz rootfs.tar
-sha256sum rootfs.tar.xz >> rootfs.sha256
+$BIN/debuerreotype-tar rootfs third_party/rootfs.tar
+sha256sum third_party/rootfs.tar > rootfs.sha256
+xz third_party/rootfs.tar
+sha256sum third_party/rootfs.tar.xz >> rootfs.sha256
 
-chown --reference=build.sh rootfs.tar.xz rootfs.sha256
+chown --reference=build.sh third_party/rootfs.tar.xz rootfs.sha256
 
 rm -rf rootfs
 rm -rf debuerreotype

@@ -1,6 +1,6 @@
 # Set up base root file system.
 FROM scratch
-ADD rootfs.tar.xz /
+ADD third_party/rootfs.tar.xz /
 
 # BUILDENV provides the version number for the build environment.
 # The format is the timestamp of the base image in YYYYMMDD format a literal '.'
@@ -9,7 +9,7 @@ ADD rootfs.tar.xz /
 ENV BUILDENV 20190801.17
 
 # Add Go support.
-ADD go1.14.4.linux-amd64.tar.gz /usr/local
+ADD third_party/go1.14.4.linux-amd64.tar.gz /usr/local
 ENV GOPATH /src/golang/
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 ENV GOCACHE /tmp
