@@ -103,7 +103,8 @@ $BIN/debuerreotype-apt-get rootfs install -yqq --no-install-recommends \
   python-distutils-extra \
   python-protobuf \
   squashfs-tools \
-  uuid-dev
+  uuid-dev \
+  zlib1g-dev
 
 # Install wine
 $BIN/debuerreotype-chroot rootfs dpkg --add-architecture i386
